@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import About from './views/About.vue'
+import Coin from './views/Coin.vue'
+import WebGL from './views/WebGL.vue'
+import Algorithm from './views/Algorithm.vue'
+
+
+
 
 Vue.use(Router)
 
@@ -16,10 +23,26 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: About
+    },
+    {
+      path: '/coin',
+      name: 'coin',
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: Coin
+    },
+    {
+      path: '/webGL',
+      name: 'webGL',
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: WebGL
+    },
+    {
+      path: '/algorithm',
+      name: 'algorithm',
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: Algorithm
     }
   ]
 })
