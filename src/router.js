@@ -5,9 +5,7 @@ import About from './views/About.vue'
 import Coin from './views/Coin.vue'
 import WebGL from './views/WebGL.vue'
 import Algorithm from './views/Algorithm.vue'
-
-
-
+import Lopa from './views/Lopa.vue'
 
 Vue.use(Router)
 
@@ -43,6 +41,12 @@ export default new Router({
       name: 'algorithm',
       //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
       component: Algorithm
-    }
+    },
+    {
+      path: '/lopa',
+      name: 'lopa',
+      //component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: Lopa
+    },
   ]
 })

@@ -120,6 +120,8 @@
     <b-table v-if="loaded" striped hover :items="movies">
       <template slot="name" slot-scope="data">{{ data.value }}</template>
     </b-table>
+    <b-button @click="addMovie" variant="success">addMovie</b-button>
+    <b-button @click="deleteMovie" variant="success">deleteMovie</b-button>
   </div>
 </template>
 
@@ -153,8 +155,8 @@ export default {
       axios
         .get("http://127.0.0.1:8000/get/movies/")
         .then(res => {
-          console.log(res.data);
-          this.initialActionMovie(res.data);
+          console.log(res.data.movies);
+          this.initialActionMovie(res.data.movies);
           console.log(this.movies);
           this.loaded = true;
 
@@ -173,7 +175,6 @@ export default {
           this.movies = res.data;
           this.loaded = true;
           */
-
           //this.$log(res.data);
           //alert(res.data);
           //this.todos = res.data
@@ -181,11 +182,73 @@ export default {
         })
         .catch(err => {
           console.log(err);
+
           //his.$log(err);
           //this.console.log(err);
           //alert(err);
         });
+    },
+    addMovie() {
+      var data = {
+        title: "Star war 2",
+        genre: "Sci-fi",
+        year: 1999,
+        creator: "admin"
+      };
+
+      axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/get/movies/",
+        data: data,
+        user: "admin"
+        //auth: {
+        //  username: "admin"
+        //}
+      });
+    },
+    deleteMovie() {
+      axios({
+        method: "delete",
+        url: "http://127.0.0.1:8000/get/movies/",
+        data: {}
+      });
     }
   }
 };
+
+/*
+
+ axios
+        .post("http://127.0.0.1:8000/get/movies/", data)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(e => {
+          console.error(e);
+        });
+
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+});
+
+axios({
+  method: 'get',
+  url: 'http://bit.ly/2mTM3nY',
+  responseType: 'stream'
+})
+  .then(function(response) {
+  response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+});
+
+var instance = axios.create({
+  baseURL: 'https://some-domain.com/api/',
+  timeout: 1000,
+  headers: {'X-Custom-Header': 'foobar'}
+});
+*/
 </script>

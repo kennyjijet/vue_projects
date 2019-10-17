@@ -9,7 +9,6 @@
     <router-view />
   </div>
 </template>
-
 <script>
 import HomeHeader from "./components/HomeHeader.vue";
 export default {
@@ -18,7 +17,6 @@ export default {
   }
 };
 </script>
-
 
 <style>
 /*

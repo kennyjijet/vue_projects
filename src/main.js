@@ -5,11 +5,14 @@ import router from './router'
 import store from './store'
 
 import BootstrapVue from 'bootstrap-vue'
+import VModal from 'vue-js-modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import './assets/sass/index.scss'
 
+//Vue.use(VModal, { dynamic: true, dynamicDefaults: { clickToClose: false } })
+Vue.use(VModal)
 Vue.use(BootstrapVue)
 Vue.use(Vuex)
 
