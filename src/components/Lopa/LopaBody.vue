@@ -5,7 +5,7 @@
         <li :key="index" v-for="(item, index) in items">{{ item.message }}</li>
       </ul>
       -->
-      <Seat v-for="(item, index) in items" :key="index" :value="item" />
+      <Seat v-for="(item, index) in lopa" :key="index" :value="item" />
     </div>
   </div>
 </template>
@@ -17,7 +17,10 @@ export default {
   components: {
     Seat
   },
-  props: {},
+  props: {
+    lopa: Array,
+    lopaSelected: String
+  },
   data() {
     return {
       items: [{ message: "Foo" }, { message: "Bar" }]

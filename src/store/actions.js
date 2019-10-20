@@ -5,5 +5,9 @@ export default {
   initialActionMovie: ({ commit }, payload) => {
     console.log(payload);
     commit('initialMovie', payload)
+  },
+  initialLOPA: ({ commit }, payload) => {
+    console.log(payload);
+    commit('initialLOPA', payload)
   }
 }

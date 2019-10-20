@@ -1,5 +1,5 @@
 <template>
-  <div class="seat">{{ this.$vnode.key }}</div>
+  <div @click="seatClick" class="seat">{{ this.$vnode.key }}</div>
 </template>
 
 <script>
@@ -10,7 +10,15 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    seatClick() {
+      //this.$router.push("Passenger");
+      this.$router.push({
+        name: "passenger",
+        params: { PassengerId: this.$vnode.key }
+      });
+    }
+  },
   mounted() {}
 };
 </script>

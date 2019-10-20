@@ -147,17 +147,19 @@ export default {
     this.created();
   },
   computed: {
-    ...mapState(["movies"])
+    ...mapState(["movies"], ["lopa"])
   },
   methods: {
-    ...mapActions(["initialActionMovie"]),
+    ...mapActions(["initialActionMovie"], ["initialLOPA"]),
     created() {
       axios
         .get("http://127.0.0.1:8000/get/movies/")
         .then(res => {
           console.log(res.data.movies);
           this.initialActionMovie(res.data.movies);
-          console.log(this.movies);
+          this.initialLOPA(this.lopa);
+
+          this.console.log(this.movies);
           this.loaded = true;
 
           //this.moviesLocal = this["movies"];

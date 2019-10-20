@@ -5,6 +5,9 @@ export default {
   initialMovie: (state, movies) => {
     state.movies = movies;
   },
+  initialLOPA: (state, lopa) => {
+    state.lopa = lopa;
+  },
   /*
   appendMovie: (state, movies) => {
     //console.log(data);
